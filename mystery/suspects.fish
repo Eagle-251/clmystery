@@ -13,45 +13,33 @@ function suspects
             end
         end
     end
-    for i in (suspects_from_members)
-        set gender (grep $i people | awk {'print $3'})
-        set suspect_height (grep -A 5 $i vehicles | grep -no 'Height.*' | awk {'print substr($2,1,1)'})
-        if test $gender = M
-            if test $suspect_height -eq 6
+    function suspects_from_height_gender
+        for i in (suspects_from_members)
+            set gender (grep $i people | awk {'print $3'})
+            set suspect_height (grep -A 5 $i vehicles | grep -no 'Height.*' | awk {'print substr($2,1,1)'})
+            if test $gender = M
+                if test $suspect_height -eq 6
+                    echo $i
+                end
+            end
+        end
+    end
+    for i in (suspects_from_height_gender)
+        set car_license (grep -B 3 $i vehicles | grep -o 'Plate.*' | awk {'print $2'})
+        set car_colour (grep -B 3 $i vehicles | grep -o 'Color.*' | awk {'print $2'})
+        set car_make (grep -B 3 $i vehicles | grep -o 'Make.*' | awk {'print $2'})
+        set car_license_check (grep -B 3 $i vehicles | grep -o 'Plate.*' | awk {'print $2'} | grep '^L337.*9$')
+        if test $car_colour = Blue -a $car_make = Honda
+            if test $car_license_check
                 echo $i
             end
         end
     end
 end
 
-#Print Information for assessing who the murderer is 
+#Call Function
 
-for i in (suspects)
-    set suspect_line_no (grep $i people | grep -no 'line.*' | awk '{ print $2 }')
-    set suspect_street (grep $i people | awk {'print $5 "_" $6'} | sed s/,//)
-    set car_license (grep -B 3 $i vehicles | grep -o 'Plate.*' | awk {'print $2'})
-    #name of suspect
-    tput bold smul
-    echo $i
-    tput sgr0
-    echo \n
-    #car info
-    grep -A 2 $car_license vehicles
-    echo \n
-    #check for interview and print
-    if test $i = "Brian Boyer"
-        cat interviews/interview-628618
-        echo \n
-    end
-    if test -e streets/$suspect_street
-        echo "Interview: " \n
-        set interview (head -n $suspect_line_no streets/$suspect_street | tail -n 1)
-        set interview_no (echo $interview | awk {'print $3'} | sed s/#//)
-        cat interviews/interview-$interview_no
-        echo \n
-    end
-end
-
+suspects
 
 #Sanity check
 
