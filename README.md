@@ -1,3 +1,11 @@
+A Fish based solution to the Command Line Murders Challenge
+
+There are two branches with two different approaches:
+
+    The exact answer solution 'exact_branch'
+    The iterative solution, using only two clues 'solution-iterative'
+
+
 The Command Line Murders
 ========================
 
