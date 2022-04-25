@@ -1,36 +1,45 @@
 A [Fish](https://fishshell.com) based solution to the Command Line Murders Challenge
 
-There a two branches with two approaches:
+This branch contains a script that returns the exact answer.
 
-- The exact answer solution 'exact_branch'
-- The iterative solution, using only two clues 'solution-iterative'
+[answer.fish](mystery/answer.fish)
 
----
+To run it you will need the [Fish shell](https://fishshell.com/) available on your $PATH.
+Fish usually installs to `/usr/bin/fish` on Linux and `/usr/local/bin/fish` on Mac OSX.
 
-# The Command Line Murders
+To check your path you can run:
 
-    .OOOOOOOOOOOOOOO @@                                   @@ OOOOOOOOOOOOOOOO.
-    OOOOOOOOOOOOOOOO @@                                    @@ OOOOOOOOOOOOOOOO
-    OOOOOOOOOO'''''' @@                                    @@ ```````OOOOOOOOO
-    OOOOO'' aaa@@@@@@@@@@@@@@@@@@@@"""                   """""""""@@aaaa `OOOO
-    OOOOO,""""@@@@@@@@@@@@@@""""                                     a@"" OOOA
-    OOOOOOOOOoooooo,                                            |OOoooooOOOOOS
-    OOOOOOOOOOOOOOOOo,                                          |OOOOOOOOOOOOC
-    OOOOOOOOOOOOOOOOOO                                         ,|OOOOOOOOOOOOI
-    OOOOOOOOOOOOOOOOOO @          THE                          |OOOOOOOOOOOOOI
-    OOOOOOOOOOOOOOOOO'@           COMMAND                      OOOOOOOOOOOOOOb
-    OOOOOOOOOOOOOOO'a'            LINE                         |OOOOOOOOOOOOOy
-    OOOOOOOOOOOOOO''              MURDERS                      aa`OOOOOOOOOOOP
-    OOOOOOOOOOOOOOb,..                                          `@aa``OOOOOOOh
-    OOOOOOOOOOOOOOOOOOo                                           `@@@aa OOOOo
-    OOOOOOOOOOOOOOOOOOO|                                             @@@ OOOOe
-    OOOOOOOOOOOOOOOOOOO@                               aaaaaaa       @@',OOOOn
-    OOOOOOOOOOOOOOOOOOO@                        aaa@@@@@@@@""        @@ OOOOOi
-    OOOOOOOOOO~~ aaaaaa"a                 aaa@@@@@@@@@@""            @@ OOOOOx
-    OOOOOO aaaa@"""""""" ""            @@@@@@@@@@@@""               @@@|`OOOO'
-    OOOOOOOo`@@a                  aa@@  @@@@@@@""         a@        @@@@ OOOO9
-    OOOOOOO'  `@@a               @@a@@   @@""           a@@   a     |@@@ OOOO3
-    `OOOO'       `@    aa@@       aaa"""          @a        a@     a@@@',OOOO'
+| Linux | Mac OS |
+| --- | --- |
+| `echo $PATH \| grep -o /usr/bin` | `echo $PATH \| grep -o /usr/local/bin` |
+
+Then `fish mystery/answer.fish` to run script.
+
+The Command Line Murders
+========================
+
+	.OOOOOOOOOOOOOOO @@                                   @@ OOOOOOOOOOOOOOOO.
+	OOOOOOOOOOOOOOOO @@                                    @@ OOOOOOOOOOOOOOOO
+	OOOOOOOOOO'''''' @@                                    @@ ```````OOOOOOOOO
+	OOOOO'' aaa@@@@@@@@@@@@@@@@@@@@"""                   """""""""@@aaaa `OOOO
+	OOOOO,""""@@@@@@@@@@@@@@""""                                     a@"" OOOA
+	OOOOOOOOOoooooo,                                            |OOoooooOOOOOS
+	OOOOOOOOOOOOOOOOo,                                          |OOOOOOOOOOOOC
+	OOOOOOOOOOOOOOOOOO                                         ,|OOOOOOOOOOOOI
+	OOOOOOOOOOOOOOOOOO @          THE                          |OOOOOOOOOOOOOI
+	OOOOOOOOOOOOOOOOO'@           COMMAND                      OOOOOOOOOOOOOOb
+	OOOOOOOOOOOOOOO'a'            LINE                         |OOOOOOOOOOOOOy
+	OOOOOOOOOOOOOO''              MURDERS                      aa`OOOOOOOOOOOP
+	OOOOOOOOOOOOOOb,..                                          `@aa``OOOOOOOh
+	OOOOOOOOOOOOOOOOOOo                                           `@@@aa OOOOo
+	OOOOOOOOOOOOOOOOOOO|                                             @@@ OOOOe
+	OOOOOOOOOOOOOOOOOOO@                               aaaaaaa       @@',OOOOn
+	OOOOOOOOOOOOOOOOOOO@                        aaa@@@@@@@@""        @@ OOOOOi
+	OOOOOOOOOO~~ aaaaaa"a                 aaa@@@@@@@@@@""            @@ OOOOOx
+	OOOOOO aaaa@"""""""" ""            @@@@@@@@@@@@""               @@@|`OOOO'
+	OOOOOOOo`@@a                  aa@@  @@@@@@@""         a@        @@@@ OOOO9
+	OOOOOOO'  `@@a               @@a@@   @@""           a@@   a     |@@@ OOOO3
+	`OOOO'       `@    aa@@       aaa"""          @a        a@     a@@@',OOOO'
 
 There's been a murder in Terminal City, and TCPD needs your help.
 
