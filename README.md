@@ -1,7 +1,5 @@
 A [Fish](https://fishshell.com) based solution to the Command Line Murders Challenge
 
-This branch contains a script that returns the exact answer.
-
 [answer.fish](mystery/answer.fish)
 
 To run it you will need the [Fish shell](https://fishshell.com/) available on your $PATH.
